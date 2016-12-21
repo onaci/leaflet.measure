@@ -1,8 +1,8 @@
 {
   "name": "leaflet-measure-meters",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Leaflet measure control =======================",
-  "main": "index.js",
+  "main": "leaflet.measure/leaflet.measure.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
