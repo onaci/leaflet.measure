@@ -1,6 +1,6 @@
 {
   "name": "leaflet-measure-meters",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Leaflet measure control =======================",
   "main": "leaflet.measure/leaflet.measure.js",
   "scripts": {
