@@ -218,7 +218,7 @@ L.Control.Measure = L.Control.extend({
 	},
 
 	_round: function(val) {
-		return Math.round((val / 1852) * 10) / 10;
+		return Math.round(val * 10) / 10;
 	},
 
 	_onKeyDown: function (e) {

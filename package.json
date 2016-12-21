@@ -1,0 +1,22 @@
+{
+  "name": "leaflet-measure-meters",
+  "version": "1.0.0",
+  "description": "Leaflet measure control =======================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danwild/leaflet.measure.git"
+  },
+  "keywords": [
+    "leaflet"
+  ],
+  "author": "mail@juergentreml.de, danwild@y7mail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danwild/leaflet.measure/issues"
+  },
+  "homepage": "https://github.com/danwild/leaflet.measure#readme"
+}
