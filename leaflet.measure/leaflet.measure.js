@@ -90,7 +90,7 @@ L.Control.Measure = L.Control.extend({
 			this._layerPaintPathTemp = L.polyline([this._lastPoint, e.latlng], { 
 				color: 'black',
 				weight: 1.5,
-				clickable: false,
+				interactive: false,
 				dashArray: '6,3'
 			}).addTo(this._layerPaint);
 		} else {
@@ -136,7 +136,7 @@ L.Control.Measure = L.Control.extend({
 			this._layerPaintPath = L.polyline([this._lastPoint], { 
 				color: 'black',
 				weight: 2,
-				clickable: false
+				interactive: false
 			}).addTo(this._layerPaint);
 		}
 
@@ -156,7 +156,8 @@ L.Control.Measure = L.Control.extend({
 			fill: true, 
 			fillOpacity: 1,
 			radius:2,
-			clickable: this._lastCircle ? true : false
+			interactive: this._lastCircle ? true : false,
+			bubblingMouseEvents: this._lastCircle ? false : true
 		}).addTo(this._layerPaint);
 		
 		this._lastCircle.on('click', function() { this._finishPath(); }, this);
@@ -197,7 +198,7 @@ L.Control.Measure = L.Control.extend({
 		});
 		this._tooltip = L.marker(position, { 
 			icon: icon,
-			clickable: false
+			interactive: false
 		}).addTo(this._layerPaint);
 	},
 

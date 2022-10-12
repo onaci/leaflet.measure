@@ -1,6 +1,6 @@
 {
   "name": "leaflet-measure-meters",
-  "version": "1.0.4",
+  "version": "2.0.1",
   "description": "Leaflet measure control =======================",
   "main": "leaflet.measure/leaflet.measure.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/danwild/leaflet.measure/issues"
   },
-  "homepage": "https://github.com/danwild/leaflet.measure#readme"
+  "homepage": "https://github.com/danwild/leaflet.measure#readme",
+  "peerDependencies": {
+    "leaflet": "^1.0.3"
+  }
 }
