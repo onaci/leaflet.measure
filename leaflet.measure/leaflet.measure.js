@@ -215,7 +215,7 @@ L.Control.Measure = L.Control.extend({
 
 		let text = `<div class="leaflet-measure-tooltip-total">${totalRound.toLocaleString()} ${units}</div>`;
 		if(differenceRound > 0 && totalRound != differenceRound) {
-			text += `<div class="leaflet-measure-tooltip-difference">${differenceRound.toLocaleString()} ${units})</div>`;
+			text += `<div class="leaflet-measure-tooltip-difference">(${differenceRound.toLocaleString()} ${units})</div>`;
 		}
 
 		this._tooltip._icon.innerHTML = text;
