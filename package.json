@@ -16,9 +16,9 @@
   "author": "mail@juergentreml.de, danwild@y7mail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/onaci/leaflet-measure/issues"
+    "url": "https://github.com/onaci/leaflet.measure/issues"
   },
-  "homepage": "https://github.com/onaci/leaflet-measure#readme",
+  "homepage": "https://github.com/onaci/leaflet.measure#readme",
   "peerDependencies": {
     "leaflet": "^1.0.3"
   }
