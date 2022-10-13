@@ -42,7 +42,7 @@ const map = new L.Map("map", {
 });
 ```
 
-For a demo see [here](http://onaci.github.io/leaflet.measure/example.html).
+For a demo see [here](http://onaci.github.io/leaflet.measure).
 
 ## License
 
