@@ -1,10 +1,53 @@
-Leaflet measure control
-=======================
+# leaflet-measure-distance [![NPM version][npm-image]][npm-url] [![NPM Downloads][npm-downloads-image]][npm-url]
 
-Note: units are currently KM, options coming soon..
+Measure distances interactively on a leaflet map.
 
-Adds a button below the map's zoom controls that allows you to activate an interactive mode to measure distances on the map.
+Adds a leaflet control which allows you to activate an interactive mode to measure and annotate distances on the map.
 
-More info coming soon...
+The default units are kilometers, however you can supply arbitrary scale factor (from meters) and label to support your prefered units.
 
-For a demo see [here](http://jtreml.github.com/leaflet.measure/example.html).
+## Example use:
+
+Default: `kilometers`:
+
+```javascript
+const map = new L.Map("map", {
+  measureControl: {
+    enabled: true,
+  },
+});
+```
+
+e.g.: `nautical miles`:
+
+```javascript
+const map = new L.Map("map", {
+  measureControl: {
+    enabled: true,
+    unitLabel: "nm",
+    unitFactor: 1852,
+  },
+});
+```
+
+e.g.: `meters`:
+
+```javascript
+const map = new L.Map("map", {
+  measureControl: {
+    enabled: true,
+    unitLabel: "m",
+    unitFactor: 1,
+  },
+});
+```
+
+For a demo see [here](http://onaci.github.io/leaflet-measure-distance/example.html).
+
+## License
+
+CSIRO Open Source Software Licence Agreement (variation of the BSD / MIT License)
+
+[npm-image]: https://badge.fury.io/js/leaflet-measure-distance.svg
+[npm-url]: https://www.npmjs.com/package/leaflet-measure-distance
+[npm-downloads-image]: https://img.shields.io/npm/dt/leaflet-measure-distance.svg

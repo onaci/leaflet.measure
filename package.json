@@ -1,6 +1,6 @@
 {
-  "name": "leaflet-measure-meters",
-  "version": "2.0.1",
+  "name": "leaflet-measure-distance",
+  "version": "0.0.1",
   "description": "Leaflet measure control =======================",
   "main": "leaflet.measure/leaflet.measure.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danwild/leaflet.measure.git"
+    "url": "git+https://github.com/onaci/leaflet.measure.git"
   },
   "keywords": [
     "leaflet"
@@ -16,9 +16,9 @@
   "author": "mail@juergentreml.de, danwild@y7mail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danwild/leaflet.measure/issues"
+    "url": "https://github.com/onaci/leaflet-measure/issues"
   },
-  "homepage": "https://github.com/danwild/leaflet.measure#readme",
+  "homepage": "https://github.com/onaci/leaflet-measure#readme",
   "peerDependencies": {
     "leaflet": "^1.0.3"
   }

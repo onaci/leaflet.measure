@@ -7,6 +7,8 @@ L.Control.Measure = L.Control.extend({
 		var className = 'leaflet-control-zoom leaflet-bar leaflet-control',
 		    container = L.DomUtil.create('div', className);
 
+		console.log(this.options);
+		
 		this._createButton('&#8674;', 'Measure', 'leaflet-control-measure leaflet-bar-part leaflet-bar-part-top-and-bottom', container, this._toggleMeasure, this);
 
 		return container;
@@ -94,7 +96,7 @@ L.Control.Measure = L.Control.extend({
 				dashArray: '6,3'
 			}).addTo(this._layerPaint);
 		} else {
-			this._layerPaintPathTemp.spliceLatLngs(0, 2, this._lastPoint, e.latlng);
+			this._spliceLatLngs(this._layerPaintPathTemp, 0, 2, this._lastPoint, e.latlng)
 		}
 
 		if(this._tooltip) {
@@ -207,19 +209,21 @@ L.Control.Measure = L.Control.extend({
 	},
 
 	_updateTooltipDistance: function(total, difference) {
-		var totalRound = this._round(total),
-			differenceRound = this._round(difference);
+		const totalRound = this._round(total);
+		const differenceRound = this._round(difference);
+		const units = this.options.measureOptions.unitLabel || 'km';
 
-		var text = '<div class="leaflet-measure-tooltip-total">' + totalRound + ' km</div>';
+		let text = `<div class="leaflet-measure-tooltip-total">${totalRound.toLocaleString()} ${units}</div>`;
 		if(differenceRound > 0 && totalRound != differenceRound) {
-			text += '<div class="leaflet-measure-tooltip-difference">(+' + differenceRound + ' km)</div>';
+			text += `<div class="leaflet-measure-tooltip-difference">${differenceRound.toLocaleString()} ${units})</div>`;
 		}
 
 		this._tooltip._icon.innerHTML = text;
 	},
 
 	_round: function(val) {
-		return Math.round((val / 1000) * 10) / 10;
+		const scale = this.options.measureOptions.unitFactor || 1;
+		return Math.round((val / scale) * 10) / 10;
 	},
 
 	_onKeyDown: function (e) {
@@ -231,6 +235,12 @@ L.Control.Measure = L.Control.extend({
 				this._finishPath();
 			}
 		}
+	},
+
+	_spliceLatLngs(polyline, start, deleteCount, ...items) {
+		const latlngs = polyline.getLatLngs();
+		latlngs.splice(start, deleteCount, ...items);
+		polyline.setLatLngs(latlngs);
 	}
 });
 
@@ -239,8 +249,8 @@ L.Map.mergeOptions({
 });
 
 L.Map.addInitHook(function () {
-	if (this.options.measureControl) {
-		this.measureControl = new L.Control.Measure();
+	if (this.options.measureControl && this.options.measureControl.enabled) {	
+		this.measureControl = new L.Control.Measure({ measureOptions: this.options.measureControl });
 		this.addControl(this.measureControl);
 	}
 });
