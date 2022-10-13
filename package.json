@@ -1,6 +1,6 @@
 {
   "name": "leaflet-measure-distance",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Leaflet measure control =======================",
   "main": "leaflet.measure/leaflet.measure.js",
   "scripts": {
