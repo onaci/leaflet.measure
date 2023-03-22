@@ -222,7 +222,7 @@ L.Control.Measure = L.Control.extend({
 	},
 
 	_round: function(val) {
-		const scale = this.options.measureOptions.unitFactor || 1;
+		const scale = this.options.measureOptions.unitFactor || 1000;
 		return Math.round((val / scale) * 10) / 10;
 	},
 
